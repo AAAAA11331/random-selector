@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>随机抽签器</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <select id="savedSessions" onchange="loadSession(this.value)">
+        <option value="">选择一个历史记录...</option>
+    </select>
+    <input type="text" id="sessionName" placeholder="历史记录命名...">
+    <textarea id="namesInput" placeholder="输入名字，一行一个..."></textarea>
+    <textarea id="projectsInput" placeholder="输入活动名称, 格式: 名称，需要人数（英文逗号）..."></textarea>
+    <button onclick="saveSession()">保存</button>
+    <button onclick="assignNames()">开始抽签</button>
+    <div id="colorBlocks"></div>
+    <div id="results"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

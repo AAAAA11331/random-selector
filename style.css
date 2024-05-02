@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    font-size: 18px; /* 增加基本字体大小 */
+}
+
+select, input, textarea, button {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 32px); /* 调整宽度以适应更大的填充 */
+    font-size: 16px; /* 输入和按钮的字体大小 */
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold; /* 加粗按钮文本使其更突出 */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#colorBlocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.color-block {
+    width: 100px; /* 调整色块大小 */
+    height: 100px; /* 调整色块大小 */
+    margin: 10px; /* 增大间距 */
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flipper {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.color-block .front, .color-block .back {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 14px; /* 调整色块内字体大小 */
+}
+
+.color-block .front {
+    background-color: #ccc;
+}
+
+.color-block .back {
+    background-color: #888;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.color-block.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+#results {
+    margin-top: 20px;
+    padding: 20px; /* 增加内部填充 */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* 结果字体大小 */
+}
